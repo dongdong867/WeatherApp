@@ -19,22 +19,17 @@ struct LocationWeather: Identifiable, Codable {
 
 extension LocationWeather {
     
-    static func decode(from data: Data) -> [LocationWeather] {
-        do {
-            let rootResponse = try JSONDecoder().decode(RootResponse.self, from: data)
-            let locationsWeather = rootResponse.records.locations.flatMap { location in
-                location.location.map { detail in
-                    let rain = detail.weatherElement.filter { $0.elementName == "PoP12h" } .flatMap { $0.time }
-                    let temperature = detail.weatherElement.filter { $0.elementName == "T" } .flatMap { $0.time }
-                    let weatherType = detail.weatherElement.filter { $0.elementName == "Wx" } .flatMap { $0.time }
-                    return LocationWeather(location: detail.locationName, rain: rain, temperature: temperature, weatherType: weatherType)
-                }
+    static func decode(from data: Data) throws -> LocationWeather {
+        let rootResponse = try JSONDecoder().decode(RootResponse.self, from: data)
+        let locationsWeather = rootResponse.records.locations.flatMap { location in
+            location.location.map { detail in
+                let rain = detail.weatherElement.filter { $0.elementName == "PoP12h" } .flatMap { $0.time }
+                let temperature = detail.weatherElement.filter { $0.elementName == "T" } .flatMap { $0.time }
+                let weatherType = detail.weatherElement.filter { $0.elementName == "Wx" } .flatMap { $0.time }
+                return LocationWeather(location: detail.locationName, rain: rain, temperature: temperature, weatherType: weatherType)
             }
-            return locationsWeather
-        } catch {
-            print(error)
-            return []
         }
+        return locationsWeather[0]
     }
     
     private struct RootResponse: Codable {
@@ -54,7 +49,7 @@ extension LocationWeather {
         let weatherElement: [WeatherElement]
     }
     
-    struct WeatherElement: Codable {
+    private struct WeatherElement: Codable {
         let elementName: String
         let description: String
         let time: [Forecast]
