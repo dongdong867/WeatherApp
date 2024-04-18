@@ -18,12 +18,13 @@ struct ForecastView: View {
             } else {
                 Group {
                     currentWeather
+                        .padding()
                     SplineImage(url: getSplineURLWithImagePath(from: getImagePathFromWeatherType(from: forecast.currentWeatherType)))
                     fiveDayForecast
+                        .padding()
                 }
             }
         }
-        .padding()
         .onReceive(forecast.$error) { error in
             if error != nil {
                 showErrorAlert.toggle()
