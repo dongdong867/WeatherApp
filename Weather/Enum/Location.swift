@@ -8,7 +8,7 @@
 import Foundation
 
 enum Location: String, CaseIterable {
-    case current
+    case current = "現在位置"
     case klu = "基隆市", tph = "新北市", tpe = "臺北市"
     case tyc = "桃園市", hsh = "新竹縣", hsc = "新竹市"
     case mal = "苗栗縣", txg = "臺中市", cwh = "彰化縣"
