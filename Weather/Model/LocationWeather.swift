@@ -51,13 +51,10 @@ extension LocationWeather {
     
     private struct WeatherElement: Codable {
         let elementName: String
-        let description: String
         let time: [Forecast]
     }
     
     struct Forecast: Codable {
-        let startTime: String
-        let endTime: String
         let elementValue: [ElementValue]
     }
     
