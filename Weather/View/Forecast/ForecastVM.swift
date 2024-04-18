@@ -45,6 +45,30 @@ final class ForecastVM: ObservableObject {
         loadForecast()
     }
     
+    @MainActor
+    func getCurrentLocation() {
+        do {
+            let locationService = LocationService()
+            try locationService.requestLocation()
+            locationService.decodeCityFromGeocode { status in
+                switch status {
+                    case .success(let cityCode):
+                        guard let location = Location.from(string: cityCode.lowercased())
+                        else {
+                            self.error = LocationServiceError.notInTaiwan
+                            return
+                        }
+                        print(location.rawValue)
+                        self.location = location
+                    case .failure(let error):
+                        self.error = error
+                }
+            }
+        } catch {
+            self.error = error
+        }
+    }
+    
     
     @MainActor
     private func fetchForecast() async {
