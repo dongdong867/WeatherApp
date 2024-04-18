@@ -7,18 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F599B1292BD0B10900F0CB0F /* LocationWeatherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F599B1282BD0B10900F0CB0F /* LocationWeatherExtension.swift */; };
 		F5A878702BCA2273002EA092 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8786F2BCA2273002EA092 /* WeatherApp.swift */; };
 		F5A878722BCA2273002EA092 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878712BCA2273002EA092 /* ContentView.swift */; };
 		F5A878742BCA2275002EA092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A878732BCA2275002EA092 /* Assets.xcassets */; };
 		F5A878772BCA2275002EA092 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A878762BCA2275002EA092 /* Preview Assets.xcassets */; };
+		F5A878812BCAFE47002EA092 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878802BCAFE47002EA092 /* ForecastView.swift */; };
+		F5A878842BCB18FF002EA092 /* SplineRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = F5A878832BCB18FF002EA092 /* SplineRuntime */; };
+		F5A878892BCB196D002EA092 /* SplineImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878882BCB196D002EA092 /* SplineImage.swift */; };
+		F5A8788F2BCBB4EF002EA092 /* LocationWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8788E2BCBB4EF002EA092 /* LocationWeather.swift */; };
+		F5A878932BCCDA3F002EA092 /* ForecastVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878922BCCDA3F002EA092 /* ForecastVM.swift */; };
+		F5A878982BCCFE0E002EA092 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878972BCCFE0E002EA092 /* APIError.swift */; };
+		F5A8789A2BCD682A002EA092 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878992BCD682A002EA092 /* Location.swift */; };
+		F5A8789D2BCDB957002EA092 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8789C2BCDB957002EA092 /* LocationService.swift */; };
+		F5A8789F2BCDBD6B002EA092 /* LocationServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8789E2BCDBD6B002EA092 /* LocationServiceError.swift */; };
+		F5A878A12BCFBDD4002EA092 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878A02BCFBDD4002EA092 /* Weekday.swift */; };
+		F5A878A32BCFC300002EA092 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878A22BCFC300002EA092 /* Temperature.swift */; };
+		F5A878A72BCFCD29002EA092 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878A62BCFCD29002EA092 /* WeatherType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F599B1282BD0B10900F0CB0F /* LocationWeatherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherExtension.swift; sourceTree = "<group>"; };
 		F5A8786C2BCA2273002EA092 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A8786F2BCA2273002EA092 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		F5A878712BCA2273002EA092 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F5A878732BCA2275002EA092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5A878762BCA2275002EA092 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5A878802BCAFE47002EA092 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		F5A878882BCB196D002EA092 /* SplineImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplineImage.swift; sourceTree = "<group>"; };
+		F5A8788E2BCBB4EF002EA092 /* LocationWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeather.swift; sourceTree = "<group>"; };
+		F5A878922BCCDA3F002EA092 /* ForecastVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastVM.swift; sourceTree = "<group>"; };
+		F5A878942BCCFC1D002EA092 /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
+		F5A878952BCCFC9E002EA092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F5A878972BCCFE0E002EA092 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F5A878992BCD682A002EA092 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F5A8789C2BCDB957002EA092 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		F5A8789E2BCDBD6B002EA092 /* LocationServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceError.swift; sourceTree = "<group>"; };
+		F5A878A02BCFBDD4002EA092 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		F5A878A22BCFC300002EA092 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		F5A878A62BCFCD29002EA092 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +53,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A878842BCB18FF002EA092 /* SplineRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F599B1272BD0B0FE00F0CB0F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F599B1282BD0B10900F0CB0F /* LocationWeatherExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F5A878632BCA2273002EA092 = {
 			isa = PBXGroup;
 			children = (
-				F5A8786E2BCA2273002EA092 /* Weather */,
+				F5A878942BCCFC1D002EA092 /* env.xcconfig */,
 				F5A8786D2BCA2273002EA092 /* Products */,
+				F5A8786E2BCA2273002EA092 /* Weather */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +88,17 @@
 		F5A8786E2BCA2273002EA092 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				F5A8786F2BCA2273002EA092 /* WeatherApp.swift */,
+				F599B1272BD0B0FE00F0CB0F /* Extensions */,
+				F5A8789B2BCDB945002EA092 /* Utilities */,
+				F5A878962BCCFDFC002EA092 /* Enum */,
+				F5A878952BCCFC9E002EA092 /* Info.plist */,
+				F5A878852BCB1928002EA092 /* Components */,
 				F5A878712BCA2273002EA092 /* ContentView.swift */,
+				F5A8786F2BCA2273002EA092 /* WeatherApp.swift */,
 				F5A878732BCA2275002EA092 /* Assets.xcassets */,
+				F5A8787E2BCAE456002EA092 /* Model */,
 				F5A878752BCA2275002EA092 /* Preview Content */,
+				F5A8787D2BCAE443002EA092 /* View */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -65,6 +109,60 @@
 				F5A878762BCA2275002EA092 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5A8787D2BCAE443002EA092 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5A8787F2BCAFE38002EA092 /* Forecast */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5A8787E2BCAE456002EA092 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5A8788E2BCBB4EF002EA092 /* LocationWeather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F5A8787F2BCAFE38002EA092 /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878802BCAFE47002EA092 /* ForecastView.swift */,
+				F5A878922BCCDA3F002EA092 /* ForecastVM.swift */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
+		F5A878852BCB1928002EA092 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878882BCB196D002EA092 /* SplineImage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F5A878962BCCFDFC002EA092 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878972BCCFE0E002EA092 /* APIError.swift */,
+				F5A878992BCD682A002EA092 /* Location.swift */,
+				F5A8789E2BCDBD6B002EA092 /* LocationServiceError.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		F5A8789B2BCDB945002EA092 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F5A8789C2BCDB957002EA092 /* LocationService.swift */,
+				F5A878A62BCFCD29002EA092 /* WeatherType.swift */,
+				F5A878A02BCFBDD4002EA092 /* Weekday.swift */,
+				F5A878A22BCFC300002EA092 /* Temperature.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +181,9 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				F5A878832BCB18FF002EA092 /* SplineRuntime */,
+			);
 			productName = Weather;
 			productReference = F5A8786C2BCA2273002EA092 /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +212,9 @@
 				Base,
 			);
 			mainGroup = F5A878632BCA2273002EA092;
+			packageReferences = (
+				F5A878822BCB18FF002EA092 /* XCRemoteSwiftPackageReference "spline-ios" */,
+			);
 			productRefGroup = F5A8786D2BCA2273002EA092 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +241,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A878A12BCFBDD4002EA092 /* Weekday.swift in Sources */,
 				F5A878722BCA2273002EA092 /* ContentView.swift in Sources */,
+				F5A878A32BCFC300002EA092 /* Temperature.swift in Sources */,
 				F5A878702BCA2273002EA092 /* WeatherApp.swift in Sources */,
+				F5A8789A2BCD682A002EA092 /* Location.swift in Sources */,
+				F5A878892BCB196D002EA092 /* SplineImage.swift in Sources */,
+				F5A878932BCCDA3F002EA092 /* ForecastVM.swift in Sources */,
+				F5A878812BCAFE47002EA092 /* ForecastView.swift in Sources */,
+				F5A8788F2BCBB4EF002EA092 /* LocationWeather.swift in Sources */,
+				F5A878982BCCFE0E002EA092 /* APIError.swift in Sources */,
+				F5A878A72BCFCD29002EA092 /* WeatherType.swift in Sources */,
+				F599B1292BD0B10900F0CB0F /* LocationWeatherExtension.swift in Sources */,
+				F5A8789D2BCDB957002EA092 /* LocationService.swift in Sources */,
+				F5A8789F2BCDBD6B002EA092 /* LocationServiceError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +263,7 @@
 /* Begin XCBuildConfiguration section */
 		F5A878782BCA2275002EA092 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5A878942BCCFC1D002EA092 /* env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -275,6 +392,8 @@
 				DEVELOPMENT_TEAM = 5G44JXAR8Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Fetching current location for forecast";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +423,8 @@
 				DEVELOPMENT_TEAM = 5G44JXAR8Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Fetching current location for forecast";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +465,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F5A878822BCB18FF002EA092 /* XCRemoteSwiftPackageReference "spline-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/splinetool/spline-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F5A878832BCB18FF002EA092 /* SplineRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5A878822BCB18FF002EA092 /* XCRemoteSwiftPackageReference "spline-ios" */;
+			productName = SplineRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F5A878642BCA2273002EA092 /* Project object */;
 }
