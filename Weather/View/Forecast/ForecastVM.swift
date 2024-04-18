@@ -10,8 +10,15 @@ import Foundation
 final class ForecastVM: ObservableObject {
     @Published var location: Location = .tpe
     @Published var weekday = getTodayWeekday()
-    @Published var locationWeather: LocationWeather?
+    @Published var loading = true
     @Published var error: Error?
+
+    @Published var currentRain = ""
+    @Published var currentTemperature = ""
+    @Published var currentWeatherType = -1
+    @Published var fiveDayRain: [String] = []
+    @Published var fiveDayTemperature: [String] = []
+    @Published var fiveDayWeatherType: [Int] = []
     
     
     init () {
@@ -38,7 +45,6 @@ final class ForecastVM: ObservableObject {
         do {
             let authorizationToken = Bundle.main.infoDictionary?["AUTHORIZATION_TOKEN"] as? String
             let apiEndpointText = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=\(authorizationToken ?? "")&locationName=\(location.rawValue)&elementName=PoP12h,T,Wx"
-            print(apiEndpointText)
             
             guard let apiEndpoint = URL(string: apiEndpointText)
             else { throw APIError.invalidURL }
@@ -49,7 +55,16 @@ final class ForecastVM: ObservableObject {
                   200...299 ~= httpResponse.statusCode
             else { throw APIError.responseError }
             
-            self.locationWeather = try LocationWeather.decode(from: data)
+            let locationWeather = try LocationWeather.decode(from: data)
+            
+            self.currentRain = locationWeather.getCurrentRain()
+            self.currentTemperature = locationWeather.getCurrentTemperature()
+            self.currentWeatherType = locationWeather.getCurrentWeatherType()
+            self.fiveDayRain = locationWeather.getFiveDayRain()
+            self.fiveDayTemperature = locationWeather.getFiveDayTemperature()
+            self.fiveDayWeatherType = locationWeather.getFiveDayWeatherType()
+            
+            self.loading = false
         } catch {
             self.error = error
         }
