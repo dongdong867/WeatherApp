@@ -39,6 +39,12 @@ final class ForecastVM: ObservableObject {
         }
     }
     
+    func handleLocationSelected() {
+        loading.toggle()
+        UserDefaults.standard.setValue(location.rawValue, forKey: "lastSelectedLocation")
+        loadForecast()
+    }
+    
     
     @MainActor
     private func fetchForecast() async {
