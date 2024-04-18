@@ -67,15 +67,12 @@ struct ForecastView: View {
                                 .resizable()
                                 .scaledToFit()
                         }
-                    Text(getWeekdayText(from: (forecast.weekday + index) % 7 + 1))
-                        .font(.system(size: 14, weight: .medium))
+                    Text(getWeekdayText(from: (forecast.weekday + index) % 7 + 1).uppercased())
                         .padding(.bottom, 2)
-                    Group {
-                        Text(forecast.fiveDayTemperature[index])
-                        Text(forecast.fiveDayRain[index])
-                    }
-                    .font(.system(size: 16))
+                    Text(forecast.fiveDayTemperature[index])
+                    Text(forecast.fiveDayRain[index])
                 }
+                .font(.system(size: 16))
             }
         }
         .padding(.horizontal, 40)
