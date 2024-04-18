@@ -34,7 +34,9 @@ struct ForecastView: View {
                 Text("OK")
             }
         } message: {
-            Text(forecast.error?.localizedDescription ?? "")
+            if forecast.error != nil {
+                Text(String(describing: forecast.error!))
+            }
         }
     }
     
@@ -79,13 +81,25 @@ struct ForecastView: View {
     }
     
     var locationButton: some View {
-        Text(forecast.location.rawValue)
-            .padding(8)
-            .fontWeight(.medium)
-            .overlay {
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(.gray)
+        Picker(forecast.location.rawValue, selection: $forecast.location) {
+            ForEach(Location.allCases, id: \.self) { scope in
+                Text(scope.rawValue.capitalized).tag(scope)
             }
+        }
+        .tint(.black)
+        .pickerStyle(.menu)
+        .fontWeight(.medium)
+        .overlay {
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(.gray)
+        }
+        .onChange(of: forecast.location) {
+            if forecast.location == .current {
+                forecast.getCurrentLocation()
+            } else {
+                forecast.handleLocationSelected()
+            }
+        }
     }
 }
 
