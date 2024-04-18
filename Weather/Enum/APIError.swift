@@ -7,19 +7,19 @@
 
 import Foundation
 
-enum APIError: Error {
+enum APIError: Error, CustomStringConvertible {
     case invalidURL
     case responseError
     case invalidData
     case custom(String)
     case unknown(String)
     
-    func description() -> String {
+    var description: String {
         switch self {
             case .invalidURL:
                 "API endpoint isn't a valid URL."
             case .responseError:
-                "API response status code isn't 200."
+                "API response status code unacceptable."
             case .invalidData:
                 "API response data can't be decode into the given model."
             case .custom(let message):
