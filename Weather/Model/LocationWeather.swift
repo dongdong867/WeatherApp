@@ -19,7 +19,7 @@ struct LocationWeather: Identifiable, Codable {
 
 extension LocationWeather {
     
-    static func decode(from data: Data) throws -> LocationWeather {
+    static func decode(from data: Data) throws -> LocationWeather? {
         let rootResponse = try JSONDecoder().decode(RootResponse.self, from: data)
         let locationsWeather = rootResponse.records.locations.flatMap { location in
             location.location.map { detail in
@@ -29,6 +29,8 @@ extension LocationWeather {
                 return LocationWeather(location: detail.locationName, rain: rain, temperature: temperature, weatherType: weatherType)
             }
         }
+        
+        if locationsWeather.isEmpty { return nil }
         return locationsWeather[0]
     }
     

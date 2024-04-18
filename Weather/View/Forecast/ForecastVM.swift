@@ -85,7 +85,8 @@ final class ForecastVM: ObservableObject {
                   200...299 ~= httpResponse.statusCode
             else { throw APIError.responseError }
             
-            let locationWeather = try LocationWeather.decode(from: data)
+             guard let locationWeather = try LocationWeather.decode(from: data)
+            else { throw APIError.custom("Response data is empty.") }
             
             self.currentRain = locationWeather.getCurrentRain()
             self.currentTemperature = locationWeather.getCurrentTemperature()
